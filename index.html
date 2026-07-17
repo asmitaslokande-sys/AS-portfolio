@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -29,7 +32,7 @@
       <section class="hero-section">
         <div class="hero-copy">
           <p class="eyebrow">Aspiring BCA Student</p>
-          <h1 class="hero-title">Asmita Lokande.S</h1>
+          <h1 class="hero-title"><span>Asmita</span><span>Lokande .S</span></h1>
           <p class="hero-text">
             Future tech innovator building confidence in coding, AI tools, leadership,
             communication, and creative problem solving.
@@ -39,18 +42,34 @@
             <a class="button secondary" href="#projects">View Projects</a>
           </div>
           <div class="hero-metrics" aria-label="Portfolio highlights">
-            <div><strong>Class 11</strong><span>EBAC Stream</span></div>
-            <div><strong>BCA</strong><span>Career Goal</span></div>
-            <div><strong>AI</strong><span>Learning Focus</span></div>
+            <div><strong data-counter="11">0</strong><span>Class 11</span></div>
+            <div><strong data-counter="3">0</strong><span>Years of Growth</span></div>
+            <div><strong data-counter="8" data-suffix="+">0</strong><span>Skills Building</span></div>
           </div>
         </div>
 
         <aside class="profile-card" aria-label="Profile card">
-          <div class="portrait">
-            <img src="assets/portfolio-reference.png" alt="Asmita Lokande portrait" />
+          <div class="profile-illustration" aria-hidden="true">
+            <svg viewBox="0 0 260 220" role="img">
+              <circle cx="130" cy="92" r="52" fill="#ffd8e7" />
+              <rect x="82" y="62" width="96" height="92" rx="24" fill="#ffffff" opacity="0.9" />
+              <path d="M92 154c8-24 28-36 38-36s30 12 38 36" fill="none" stroke="#8ecbff" stroke-width="10" stroke-linecap="round" />
+              <circle cx="112" cy="92" r="6" fill="#6b4f6f" />
+              <circle cx="148" cy="92" r="6" fill="#6b4f6f" />
+              <path d="M118 112c8 8 16 8 24 0" stroke="#ff9dc3" stroke-width="5" stroke-linecap="round" fill="none" />
+            </svg>
           </div>
-          <h2>Future Tech Innovator</h2>
-          <p>Pune, Maharashtra, India</p>
+          <div class="profile-top">
+            <div class="portrait">
+              <img src="assets/portfolio-reference.png" alt="Asmita Lokande portrait" />
+            </div>
+            <div class="profile-name-block">
+              <p class="profile-name-label">Hello, I’m</p>
+              <h2 class="profile-name">Asmita .S Lokande</h2>
+            </div>
+          </div>
+          <p class="profile-role">Future Tech Innovator</p>
+          <p class="profile-meta">Pune, Maharashtra, India</p>
           <div class="profile-links">
             <a href="tel:+918123274326">Call</a>
             <a href="mailto:asmitaslokande@gmail.com">Email</a>

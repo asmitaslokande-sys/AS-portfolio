@@ -29,6 +29,8 @@ body {
   font-family: Inter, Arial, sans-serif;
   color: var(--ink);
   overflow-x: hidden;
+  position: relative;
+  padding-bottom: 40px;
   background:
     radial-gradient(circle at 12% 12%, rgba(255, 215, 236, 0.95), transparent 24rem),
     radial-gradient(circle at 90% 8%, rgba(221, 240, 255, 0.9), transparent 28rem),
@@ -130,9 +132,38 @@ main,
   margin: 0 auto;
 }
 
+@media (min-width: 1200px) {
+  .hero-section {
+    padding: 96px clamp(28px, 4vw, 84px) 86px;
+  }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255, 157, 195, 0.2) 0 7px, transparent 8px),
+    radial-gradient(circle at 80% 15%, rgba(142, 203, 255, 0.2) 0 6px, transparent 7px),
+    radial-gradient(circle at 30% 80%, rgba(255, 213, 107, 0.18) 0 6px, transparent 7px),
+    radial-gradient(circle at 70% 70%, rgba(183, 161, 255, 0.18) 0 8px, transparent 9px),
+    radial-gradient(circle at 50% 40%, rgba(255, 240, 217, 0.24) 0 5px, transparent 6px);
+  animation: driftDots 20s linear infinite;
+  z-index: 0;
+}
+
+main,
+.site-footer,
+.site-header {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-section {
   position: relative;
   min-height: calc(100vh - 78px);
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) 360px;
   gap: clamp(32px, 6vw, 76px);
@@ -182,19 +213,36 @@ h1 {
 }
 
 .hero-title {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12em;
   max-width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid rgba(255, 124, 159, 0.9);
-  width: 0;
-  animation: fadeUp 700ms ease both, typing 3.2s steps(18, end) 0.25s forwards, blink 0.8s step-end infinite;
+  width: auto;
+  margin-bottom: 18px;
+  font-family: "Pacifico", "Great Vibes", "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(2.1rem, 4.2vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: #000000;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85);
+  white-space: normal;
+  overflow: visible;
+  animation: fadeUp 700ms ease both;
+}
+
+.hero-title span {
+  display: block;
+  width: fit-content;
 }
 
 h2 {
   margin-bottom: 18px;
   font-size: clamp(1.7rem, 3.4vw, 2.6rem);
   line-height: 1.05;
+  font-family: "Great Vibes", "Brush Script MT", "Segoe Script", cursive;
+  letter-spacing: 0.02em;
+  color: #000000;
 }
 
 .section h2,
@@ -210,6 +258,15 @@ h2 {
   border-right: 1px solid rgba(255, 124, 159, 0.8);
   width: 0;
   animation: fadeUp 700ms ease both, typeHeading 2.2s steps(24, end) 0.25s forwards, blink 0.8s step-end infinite;
+}
+
+.projects-section .section-heading h2,
+.achievement-grid h2,
+.cards-row h3 {
+  font-family: "Great Vibes", "Brush Script MT", "Segoe Script", cursive;
+  color: #000000;
+  letter-spacing: 0.02em;
+  text-shadow: none;
 }
 
 h3 {
@@ -293,9 +350,10 @@ p {
 .project-card,
 .info-card,
 .achievement-grid article {
-  border: 1px solid #e7d9c2;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #fdf5e8 0%, #f7ebdc 100%);
+  transform: translateY(var(--parallax-offset, 0));
+  border: 1px solid rgba(231, 217, 194, 0.95);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fdf7eb 0%, #f7e9dc 48%, #f5eafc 100%);
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 28px rgba(7, 20, 45, 0.05);
   transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -319,8 +377,13 @@ p {
 
 .hero-metrics strong {
   display: block;
-  color: var(--blue);
+  color: #8a5d86;
   font-size: 1.2rem;
+}
+
+.hero-metrics strong[data-counter] {
+  font-size: 1.5rem;
+  transition: color 180ms ease;
 }
 
 .hero-metrics span {
@@ -333,6 +396,24 @@ p {
   text-align: center;
   box-shadow: var(--shadow);
   animation: cardEnter 850ms ease 180ms both;
+  position: relative;
+  overflow: hidden;
+  border-color: #f3cfe1;
+  border-width: 1.5px;
+}
+
+.profile-illustration {
+  position: absolute;
+  inset: 8px 8px auto auto;
+  width: 110px;
+  opacity: 0.95;
+  animation: floatCard 5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.profile-illustration svg {
+  width: 100%;
+  height: auto;
 }
 
 .portrait {
@@ -341,12 +422,55 @@ p {
   height: 220px;
   margin: 0 auto 24px;
   overflow: hidden;
-  border: 6px solid var(--blue-2);
+  border: 6px solid #f0c6df;
   border-radius: 50%;
-  background: #eaf1f8;
-  box-shadow: 0 0 0 10px rgba(255, 227, 236, 0.72);
+  background: linear-gradient(135deg, #fff6fb 0%, #ebe4ff 100%);
+  box-shadow: 0 0 0 10px rgba(255, 227, 236, 0.72), 0 0 0 14px rgba(224, 230, 255, 0.45);
   transition: transform 260ms ease, box-shadow 260ms ease;
   animation: softFloat 7s ease-in-out infinite alternate;
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.profile-name-block {
+  min-width: 0;
+  text-align: left;
+}
+
+.profile-name-label {
+  margin: 0 0 4px;
+  color: var(--blue);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.profile-name {
+  margin: 0;
+  font-family: "Great Vibes", "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  line-height: 1.02;
+  color: #000000;
+  text-shadow: none;
+  white-space: nowrap;
+}
+
+.profile-role {
+  margin-bottom: 6px;
+  font-size: 1.04rem;
+  font-weight: 800;
+}
+
+.profile-meta {
+  margin-bottom: 16px;
+  color: var(--muted);
 }
 
 .profile-card:hover .portrait {
@@ -380,6 +504,18 @@ p {
 .section {
   padding: 76px 0;
   scroll-margin-top: 90px;
+  transition: transform 500ms ease, opacity 500ms ease;
+  position: relative;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 245, 250, 0.35), rgba(239, 243, 255, 0.25));
+  z-index: -1;
+  pointer-events: none;
 }
 
 .section:nth-of-type(odd) {
@@ -550,6 +686,7 @@ p {
   background: linear-gradient(120deg, #ff9dc3, #8ecbff, #ffd56b);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   pointer-events: none;
 }
@@ -576,10 +713,11 @@ p {
   min-height: 230px;
   padding: 26px;
   overflow: hidden;
-  border: 1px solid rgba(234, 223, 244, 0.95);
-  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(210, 228, 245, 0.9);
+  background: linear-gradient(135deg, rgba(237, 246, 255, 0.95), rgba(223, 242, 255, 0.9));
   transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease, background 260ms ease;
   animation: riseIn 750ms ease both;
+  box-shadow: 0 10px 24px rgba(7, 20, 45, 0.04);
 }
 
 .project-card::after {
@@ -597,6 +735,7 @@ p {
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 22px 48px rgba(7, 20, 45, 0.11);
   border-color: rgba(7, 85, 184, 0.16);
+  animation: softFloat 2.6s ease-in-out infinite;
 }
 
 .project-card:hover::after {
@@ -621,6 +760,7 @@ p {
   background:
     linear-gradient(135deg, rgba(4, 28, 54, 0.96), rgba(7, 85, 184, 0.9)),
     radial-gradient(circle at top right, rgba(255, 227, 236, 0.55), transparent 18rem);
+  box-shadow: 0 16px 34px rgba(7, 85, 184, 0.14);
 }
 
 .featured-project p,
@@ -803,6 +943,25 @@ p {
   }
 }
 
+@keyframes driftDots {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-24px, -24px, 0);
+  }
+}
+
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -824,6 +983,7 @@ p {
 
   .site-header {
     flex-wrap: wrap;
+    padding: 16px clamp(16px, 3vw, 24px);
   }
 
   .site-nav {
@@ -847,7 +1007,16 @@ p {
 
   .hero-section {
     min-height: auto;
-    padding-top: 46px;
+    padding: 48px 24px 40px;
+  }
+
+  .hero-copy,
+  .profile-card {
+    max-width: 100%;
+  }
+
+  .hero-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .project-grid,
@@ -866,8 +1035,33 @@ p {
     padding: 14px 12px;
   }
 
+  .brand {
+    font-size: 0.95rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+    white-space: normal;
+    line-height: 1.05;
+    border-right: none;
+    width: auto;
+    animation: none;
+  }
+
+  .section h2 {
+    font-size: clamp(1.4rem, 7vw, 1.9rem);
+    white-space: normal;
+    border-right: none;
+    width: auto;
+    animation: none;
+  }
+
   h1 {
     font-size: clamp(2.65rem, 18vw, 4.2rem);
+  }
+
+  .hero-text {
+    font-size: 1rem;
   }
 
   .hero-metrics,
@@ -875,6 +1069,10 @@ p {
   .cards-row,
   .site-footer {
     grid-template-columns: 1fr;
+  }
+
+  .hero-metrics {
+    gap: 10px;
   }
 
   .section {
@@ -891,14 +1089,60 @@ p {
     padding: 20px;
   }
 
+  .profile-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .profile-name-block {
+    text-align: center;
+  }
+
   .portrait {
     width: 188px;
     height: 188px;
   }
 
+  .profile-name {
+    font-size: 1.1rem;
+    white-space: normal;
+  }
+
+  .profile-illustration {
+    width: 88px;
+  }
+
   .skill {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .button,
+  .profile-links a,
+  .contact-links a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions,
+  .profile-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 920px) {
+  .hero-section {
+    padding: 54px 26px 42px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 7vw, 3.6rem);
+  }
+
+  .hero-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
