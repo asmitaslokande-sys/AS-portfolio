@@ -28,6 +28,7 @@ body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
   color: var(--ink);
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 12% 12%, rgba(255, 215, 236, 0.95), transparent 24rem),
     radial-gradient(circle at 90% 8%, rgba(221, 240, 255, 0.9), transparent 28rem),
@@ -179,12 +180,23 @@ h1 {
   line-height: 0.9;
   text-transform: uppercase;
   animation: riseIn 700ms ease both;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid rgba(7, 85, 184, 0.7);
+  width: fit-content;
+  animation: typing 3.2s steps(24, end) 0.2s both, blink 0.8s step-end infinite;
 }
 
 h2 {
   margin-bottom: 18px;
   font-size: clamp(1.7rem, 3.4vw, 2.6rem);
   line-height: 1.05;
+}
+
+.section h2,
+.hero-copy h1,
+.profile-card h2 {
+  animation: fadeUp 750ms ease both;
 }
 
 h3 {
@@ -266,11 +278,12 @@ p {
 .project-card,
 .info-card,
 .achievement-grid article {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid #e7d9c2;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8efe0 0%, #f5e7cf 100%);
   backdrop-filter: blur(10px);
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  box-shadow: 0 10px 28px rgba(7, 20, 45, 0.05);
+  transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .hero-metrics div:hover,
@@ -461,7 +474,8 @@ p {
   height: 10px;
   overflow: hidden;
   border-radius: 99px;
-  background: #dfe6ee;
+  background: #e7ddcf;
+  position: relative;
 }
 
 .skill i::after {
@@ -474,6 +488,21 @@ p {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  box-shadow: 0 0 10px rgba(7, 85, 184, 0.18);
+}
+
+.is-visible .skill i::after {
+  transform: scaleX(1);
+}
+
+.skill i::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: translateX(-100%);
+  animation: skillSweep 2.4s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .is-visible .skill i::after {
@@ -636,13 +665,14 @@ p {
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 650ms ease, transform 650ms ease;
+  transform: translateY(24px) scale(0.985);
+  transition: opacity 760ms cubic-bezier(0.22, 1, 0.36, 1), transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 @keyframes pastelDrift {
@@ -696,6 +726,41 @@ p {
 
   50% {
     transform: translate3d(-18px, 18px, 0);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: fit-content;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skillSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 

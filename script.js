@@ -1,7 +1,7 @@
 const menuButton = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".site-nav");
 const revealTargets = document.querySelectorAll(
-  ".section, .contact-section, .project-card, .info-card, .achievement-grid article"
+  ".hero-section, .section, .contact-section, .project-card, .info-card, .achievement-grid article, .education-panel, .skills-panel, .profile-card, .hero-metrics div, .timeline-item, .skill, .tag-grid span, .contact-links a"
 );
 
 if (menuButton && nav) {
