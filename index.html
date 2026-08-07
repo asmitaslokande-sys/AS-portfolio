@@ -1,237 +1,252 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio website for Asmita Lokande.S, aspiring BCA student and future tech innovator." />
-    <title>Asmita Lokande.S | Portfolio</title>
+    <meta
+      name="description"
+      content="Bloom & Loop is a premium handmade crochet brand creating elegant accessories, home decor, gifts, and wearables."
+    />
+    <title>Bloom & Loop | Premium Handmade Crochet</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
     <header class="site-header">
-      <a class="brand" href="#home">Asmita</a>
+      <a class="brand" href="#home" aria-label="Bloom and Loop home">
+        <span class="brand-mark">B&L</span>
+        <span>Bloom & Loop</span>
+      </a>
       <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
       <nav class="site-nav" aria-label="Main navigation">
+        <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#achievements">Achievements</a>
+        <a href="#collection">Collection</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <main id="home">
-      <section class="hero-section">
-        <div class="hero-copy">
-          <p class="eyebrow">Aspiring BCA Student</p>
-          <h1 class="hero-title"><span>Asmita</span><span>Lokande .S</span></h1>
+    <main>
+      <section id="home" class="hero-section section-anchor">
+        <div class="orb orb-one" aria-hidden="true"></div>
+        <div class="orb orb-two" aria-hidden="true"></div>
+
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Premium handmade crochet</p>
+          <h1>Soft, timeless crochet pieces made with love.</h1>
           <p class="hero-text">
-            Future tech innovator building confidence in coding, AI tools, leadership,
-            communication, and creative problem solving.
+            Bloom & Loop creates boutique crochet accessories, home accents, gifts, and wearables
+            with elegant detail, warm textures, and thoughtful craftsmanship.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="mailto:asmitaslokande@gmail.com">Contact Me</a>
-            <a class="button secondary" href="#projects">View Projects</a>
-          </div>
-          <div class="hero-metrics" aria-label="Portfolio highlights">
-            <div><strong data-counter="11">0</strong><span>Class 11</span></div>
-            <div><strong data-counter="3">0</strong><span>Years of Growth</span></div>
-            <div><strong data-counter="8" data-suffix="+">0</strong><span>Skills Building</span></div>
+            <a class="button primary" href="#collection">Explore Collection</a>
+            <a class="button secondary" href="#contact">Start Custom Order</a>
           </div>
         </div>
 
-        <aside class="profile-card" aria-label="Profile card">
-          <div class="profile-illustration" aria-hidden="true">
-            <svg viewBox="0 0 260 220" role="img">
-              <circle cx="130" cy="92" r="52" fill="#ffd8e7" />
-              <rect x="82" y="62" width="96" height="92" rx="24" fill="#ffffff" opacity="0.9" />
-              <path d="M92 154c8-24 28-36 38-36s30 12 38 36" fill="none" stroke="#8ecbff" stroke-width="10" stroke-linecap="round" />
-              <circle cx="112" cy="92" r="6" fill="#6b4f6f" />
-              <circle cx="148" cy="92" r="6" fill="#6b4f6f" />
-              <path d="M118 112c8 8 16 8 24 0" stroke="#ff9dc3" stroke-width="5" stroke-linecap="round" fill="none" />
-            </svg>
-          </div>
-          <div class="profile-top">
-            <div class="portrait">
-              <img src="assets/portfolio-reference.png" alt="Asmita Lokande portrait" />
-            </div>
-            <div class="profile-name-block">
-              <p class="profile-name-label">Hello, I’m</p>
-              <h2 class="profile-name">Asmita .S Lokande</h2>
-            </div>
-          </div>
-          <p class="profile-role">Future Tech Innovator</p>
-          <p class="profile-meta">Pune, Maharashtra, India</p>
-          <div class="profile-links">
-            <a href="tel:+918123274326">Call</a>
-            <a href="mailto:asmitaslokande@gmail.com">Email</a>
-            <a href="https://github.com/asmita-lokande">GitHub</a>
-          </div>
+        <aside class="hero-image-wrap reveal" aria-label="Bloom and Loop brand image">
+          <div class="hero-image image-crop crop-brand" role="img" aria-label="Bloom and Loop crochet bouquet"></div>
+          <div class="floating-note">Handmade with love</div>
+          <div class="floating-badge">Unique<br />Timeless</div>
         </aside>
+
+        <a class="scroll-cue" href="#about" aria-label="Scroll to about">
+          <span></span>
+        </a>
       </section>
 
-      <section id="about" class="section about-grid">
-        <div>
-          <p class="section-kicker">About Me</p>
-          <h2>Learning today to lead tomorrow.</h2>
+      <section id="about" class="section about-section section-anchor">
+        <div class="about-image-wrap reveal">
+          <div class="about-image image-crop crop-founder" role="img" aria-label="Founder portrait"></div>
+          <div class="shape-card">Every stitch carries a little piece of my heart.</div>
         </div>
-        <div class="about-copy">
+        <div class="about-copy reveal">
+          <p class="eyebrow">About the studio</p>
+          <h2>Where simple yarn becomes meaningful handmade beauty.</h2>
           <p>
-            I am a dedicated and enthusiastic Class 11 student pursuing the EBAC stream with a
-            strong passion for learning, leadership, and personal growth. I enjoy participating in
-            academic, cultural, and leadership activities that strengthen confidence, discipline,
-            teamwork, and communication.
+            Bloom & Loop was founded with the vision of transforming simple yarn into meaningful
+            handmade creations that bring joy, comfort, and beauty to everyday life.
           </p>
           <p>
-            My goal is to pursue a Bachelor of Computer Applications after higher secondary
-            education and build a meaningful career in technology by continuously improving my
-            technical skills and contributing to positive innovation.
+            Founded by Asmita Lokande.S, the brand celebrates elegant crochet products shaped by
+            patience, creativity, warm color palettes, and a love for handcrafted details.
           </p>
-        </div>
-      </section>
-
-      <section class="section education-skills" id="skills">
-        <article class="education-panel">
-          <p class="section-kicker">Education</p>
-          <h2>Academic Journey</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <span>2024 - Present</span>
-              <h3>Class 11 - EBAC Stream</h3>
-              <p>Building academic foundations and preparing for future studies in technology.</p>
-            </div>
-            <div class="timeline-item">
-              <span>Previous Education</span>
-              <h3>St. Mary's Girl's High School</h3>
-              <p>Completed school education with active participation in academics and activities.</p>
-            </div>
+          <div class="stats-row">
+            <div><strong data-count="100">0</strong><span>Handmade focus</span></div>
+            <div><strong data-count="7">0</strong><span>Services</span></div>
+            <div><strong data-count="4">0</strong><span>Collections</span></div>
           </div>
-        </article>
+        </div>
+      </section>
 
-        <article class="skills-panel">
-          <p class="section-kicker">Technical Skills</p>
-          <h2>What I Am Building</h2>
-          <div class="skill-list">
-            <div class="skill" style="--value: 86%"><span>Vibe Coding</span><i></i></div>
-            <div class="skill" style="--value: 72%"><span>Python Basics</span><i></i></div>
-            <div class="skill" style="--value: 80%"><span>HTML</span><i></i></div>
-            <div class="skill" style="--value: 72%"><span>CSS</span><i></i></div>
-            <div class="skill" style="--value: 59%"><span>JavaScript Basics</span><i></i></div>
-            <div class="skill" style="--value: 70%"><span>AI & Prompt Engineering</span><i></i></div>
-            <div class="skill" style="--value: 84%"><span>MS Office</span><i></i></div>
-            <div class="skill" style="--value: 78%"><span>Digital Tools</span><i></i></div>
+      <section id="collection" class="section collection-section section-anchor">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Collection</p>
+          <h2>Handcrafted pieces for your style, space, and special moments.</h2>
+        </div>
+        <div class="card-grid">
+          <article class="collection-card reveal">
+            <div class="card-image image-crop crop-hair"></div>
+            <span>Accessories</span>
+            <h3>Hair Accessories</h3>
+            <p>Floral hair clips, crochet hair ties, decorative pins, and custom accessories.</p>
+          </article>
+          <article class="collection-card reveal">
+            <div class="card-image image-crop crop-bags"></div>
+            <span>Bags</span>
+            <h3>Bags & Accessories</h3>
+            <p>Tote bags, shoulder bags, mini bags, phone cases, and fingerless gloves.</p>
+          </article>
+          <article class="collection-card reveal">
+            <div class="card-image image-crop crop-home"></div>
+            <span>Home</span>
+            <h3>Home Collection</h3>
+            <p>Heart cushions, star cushions, decorative crochet pieces, and seasonal decor.</p>
+          </article>
+          <article class="collection-card reveal">
+            <div class="card-image image-crop crop-wear"></div>
+            <span>Wearables</span>
+            <h3>Wearables</h3>
+            <p>Crochet tops, sweaters, custom clothing, and soft seasonal wear.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section featured-section">
+        <div class="featured-image image-crop crop-feature reveal"></div>
+        <div class="featured-copy reveal">
+          <span class="badge">Featured Product</span>
+          <h2>Bloom-ready accessories with a boutique handmade finish.</h2>
+          <p>
+            Designed for gifting, styling, and everyday charm, each piece is made to feel personal,
+            soft, and beautifully considered.
+          </p>
+          <a class="button primary" href="#contact">Request a Similar Piece</a>
+        </div>
+      </section>
+
+      <section id="services" class="section services-section section-anchor">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Services</p>
+          <h2>Personalized crochet for thoughtful gifting and elegant styling.</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal"><h3>Custom Crochet Orders</h3><p>Personal pieces made around your style, color, and occasion.</p></article>
+          <article class="service-card reveal"><h3>Personalized Gifts</h3><p>Warm handmade gifts for birthdays, celebrations, and keepsakes.</p></article>
+          <article class="service-card reveal"><h3>Gift Packaging</h3><p>Soft, polished packaging that keeps the handmade feeling special.</p></article>
+          <article class="service-card reveal"><h3>Bulk & Event Orders</h3><p>Coordinated handmade pieces for events, gifting, and creative needs.</p></article>
+          <article class="service-card reveal"><h3>Home Decor</h3><p>Cozy cushions, accents, seasonal decor, and handmade statement pieces.</p></article>
+          <article class="service-card reveal"><h3>Fashion Wearables</h3><p>Crochet tops, sweaters, accessories, and custom clothing details.</p></article>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery-section section-anchor">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Gallery</p>
+          <h2>A soft visual story of Bloom & Loop creations.</h2>
+        </div>
+        <div class="masonry-gallery">
+          <button class="gallery-item tall image-crop crop-brand reveal" type="button" aria-label="Open gallery image"></button>
+          <button class="gallery-item image-crop crop-hair reveal" type="button" aria-label="Open gallery image"></button>
+          <button class="gallery-item wide image-crop crop-bags reveal" type="button" aria-label="Open gallery image"></button>
+          <button class="gallery-item image-crop crop-home reveal" type="button" aria-label="Open gallery image"></button>
+          <button class="gallery-item tall image-crop crop-wear reveal" type="button" aria-label="Open gallery image"></button>
+          <button class="gallery-item image-crop crop-founder reveal" type="button" aria-label="Open gallery image"></button>
+        </div>
+      </section>
+
+      <section class="section testimonials-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Testimonials</p>
+          <h2>Gentle words from handmade lovers.</h2>
+        </div>
+        <div class="testimonial-shell reveal">
+          <button class="slider-button prev" type="button" aria-label="Previous testimonial">‹</button>
+          <div class="testimonial-track">
+            <article class="testimonial-card active">
+              <div class="avatar">A</div>
+              <div><strong>Ananya</strong><span>★★★★★</span></div>
+              <p>The crochet hair clips felt so premium and delicate. The packaging was beautiful too.</p>
+            </article>
+            <article class="testimonial-card">
+              <div class="avatar">M</div>
+              <div><strong>Meera</strong><span>★★★★★</span></div>
+              <p>I ordered a custom gift and it looked thoughtful, soft, and truly handmade with care.</p>
+            </article>
+            <article class="testimonial-card">
+              <div class="avatar">R</div>
+              <div><strong>Riya</strong><span>★★★★★</span></div>
+              <p>The colors, finishing, and little details made the product feel very boutique.</p>
+            </article>
           </div>
-        </article>
-      </section>
-
-      <section class="section">
-        <p class="section-kicker">Personal Strengths</p>
-        <h2>Skills Beyond Code</h2>
-        <div class="tag-grid">
-          <span>Public Speaking</span>
-          <span>Leadership</span>
-          <span>Time Management</span>
-          <span>Creativity</span>
-          <span>Teamwork</span>
-          <span>Adaptable</span>
-          <span>Curious</span>
-          <span>Hardworking</span>
+          <button class="slider-button next" type="button" aria-label="Next testimonial">›</button>
         </div>
       </section>
 
-      <section id="projects" class="section projects-section">
-        <div class="section-heading">
-          <p class="section-kicker">Projects</p>
-          <h2>Selected Work</h2>
+      <section id="contact" class="section contact-section section-anchor">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Start your custom Bloom & Loop order.</h2>
+          <p>
+            Share your idea, color preference, gifting need, or product request. Every purchase
+            helps support handmade creativity, passion, and artistry.
+          </p>
+          <div class="contact-info">
+            <a href="https://instagram.com/bloomandloop_crochet">@bloomandloop_crochet</a>
+            <a href="https://wa.me/919876543210">+91 98765 43210</a>
+            <a href="mailto:bloomandloopcrafts@gmail.com">bloomandloopcrafts@gmail.com</a>
+            <span>Pune, Maharashtra, India</span>
+          </div>
         </div>
-        <div class="project-grid">
-          <article class="project-card featured-project">
-            <span>Website</span>
-            <h3>Personal Portfolio Website</h3>
-            <p>Designed to showcase skills, achievements, certifications, leadership, and future career goals.</p>
-          </article>
-          <article class="project-card">
-            <span>Practice</span>
-            <h3>Vibe Coding Projects</h3>
-            <p>Exploring AI-assisted development and mini projects to strengthen coding confidence.</p>
-          </article>
-          <article class="project-card">
-            <span>Leadership</span>
-            <h3>School Event Management</h3>
-            <p>Planned and organized school events and activities through leadership roles.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="achievements" class="section achievement-grid">
-        <article>
-          <p class="section-kicker">Achievements</p>
-          <h2>Awards & Recognition</h2>
-          <ul class="clean-list">
-            <li>Award recipient for Dance</li>
-            <li>Award recipient for Drama</li>
-            <li>Award recipient for Speech Competitions</li>
-            <li>Received the 100% Attendance Award</li>
-            <li>Achieved 100/100 in Hindi</li>
-          </ul>
-        </article>
-        <article>
-          <p class="section-kicker">Certifications</p>
-          <h2>Learning Milestones</h2>
-          <ul class="clean-list">
-            <li>Introduction to Python - Coursera</li>
-            <li>AI For Everyone - Coursera</li>
-            <li>Microsoft Office Specialist - Excel, Word, PowerPoint</li>
-            <li>Vibe Coding - In Progress</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="section cards-row">
-        <article class="info-card">
-          <p class="section-kicker">Leadership</p>
-          <h3>Volunteering</h3>
-          <p>President, class prefect, Science Club Captain, and active participant in cultural, social, and community activities.</p>
-        </article>
-        <article class="info-card">
-          <p class="section-kicker">Experience</p>
-          <h3>Work & Internships</h3>
-          <p>No formal work experience yet. Actively building skills through projects, academics, leadership roles, and volunteering.</p>
-        </article>
-        <article class="info-card">
-          <p class="section-kicker">Interests</p>
-          <h3>Hobbies</h3>
-          <p>Dancing, swimming, badminton, listening to music, travelling, and spending quality time with family and friends.</p>
-        </article>
-      </section>
-
-      <section id="contact" class="contact-section">
-        <div>
-          <p class="section-kicker">Contact</p>
-          <h2>Let's Connect</h2>
-          <p>I am open to learning opportunities, school projects, volunteering, and beginner-friendly tech exposure.</p>
-        </div>
-        <div class="contact-links">
-          <a href="tel:+918123274326">+91 81232 74326</a>
-          <a href="mailto:asmitaslokande@gmail.com">asmitaslokande@gmail.com</a>
-          <a href="https://linkedin.com/in/asmita-lokande">linkedin.com/in/asmita-lokande</a>
-          <a href="https://github.com/asmita-lokande">github.com/asmita-lokande</a>
-        </div>
+        <form class="contact-form reveal" action="#" method="post">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="button primary" type="submit">Send Message</button>
+        </form>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Asmita Lokande.S</p>
-      <p>English | Hindi | Marathi</p>
+      <div>
+        <a class="brand" href="#home"><span class="brand-mark">B&L</span><span>Bloom & Loop</span></a>
+        <p>Handmade | Unique | Timeless | With Love</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#collection">Collection</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
     </footer>
+
+    <div class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+      <div class="lightbox-image"></div>
+    </div>
 
     <script src="script.js"></script>
   </body>
